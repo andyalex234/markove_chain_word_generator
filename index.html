@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Markov Chains word generator</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="markovword.js" type="text/javascript"></script>
+
+    <style>
+      body {
+        padding: 20px;
+      }
+
+      .markov {
+        padding: 16px;
+        background-color: #EEE;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <h1>Markov Chains</h1>
+
+    <p>This page demonstrates generating text from a Markov chain.  The program reads in text from the box below and generates new text based on word-based "n-gram" probabilities from the source text. </p>
+
+
+    <p>
+      Input text:<br/>
+      <textarea id="text" cols="100" rows="10">
+        A simulation is the imitation of the operation of a real-world process or system over time.[1] Simulations require the use of models; the model represents the key characteristics or behaviors of the selected system or process, whereas the simulation represents the evolution of the model over time. Often, computers are used to execute the simulation.
+
+        Simulation is used in many contexts, such as simulation of technology for performance tuning or optimizing, safety engineering, testing, training, education,[2] and video games. Simulation is also used with scientific modelling of natural systems[2] or human systems to gain insight into their functioning,[3] as in economics. Simulation can be used to show the eventual real effects of alternative conditions and courses of action. Simulation is also used when the real system cannot be engaged, because it may not be accessible, or it may be dangerous or unacceptable to engage, or it is being designed but not yet built, or it may simply not exist.[4]
+        
+        Key issues in modeling and simulation include the acquisition of valid sources of information about the relevant selection of key characteristics and behaviors used to build the model, the use of simplifying approximations and assumptions within the model, and fidelity and validity of the simulation outcomes. Procedures and protocols for model verification and validation are an ongoing field of academic study, refinement, research and development in simulations technology or practice, particularly in the work of computer simulation.
+      </textarea>
+    </p>
+
+    <p>
+      order: 
+      <select id = "order">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </p>
+
+    <p>
+      length: <input type="text" size="5" id="length" value="50"></input>
+    </p>
+
+    <p>
+      <button id="generate">generate</button>
+      <button id="clear">clear</button>
+    </p>
+
+    <p id ="results"></p>
+  </body>
+</html>
